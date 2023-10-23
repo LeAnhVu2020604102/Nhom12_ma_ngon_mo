@@ -25,7 +25,7 @@ while True:
     for (x, y, w, h) in faces:
         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
-    # Hiển thị video với các khuôn mặt đã xác định
+    # Hien thi video voi khuon mat da xac dinh
     cv2.imshow('Face Detection', frame)
 
     # Thoát vòng lặp khi nhấn phím bất kì
