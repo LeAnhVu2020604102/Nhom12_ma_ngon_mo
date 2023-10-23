@@ -3,15 +3,16 @@ import cv2
 
 def draw_face_rectangles(image, face_coordinates):
     for (x, y, w, h) in face_coordinates:
-        # Generate a random RGB color for the rectangle
+        # Tạo màu RGB ngẫu nhiên 
         color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
         cv2.rectangle(image, (x, y), (x + w, y + h), color, 3)
-#NHAN DIEN KHUON MAT TU VID
+# Nhận diện khuôn mặt từ video
 # Tạo đối tượng VideoCapture để lấy video từ webcam (hoặc camera mạng)
 cap = cv2.VideoCapture(0)  # Số 0 thường tương ứng với webcam máy tính
 # Tạo bộ phân loại khuôn mặt
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 while True:
+    
     # Đọc khung hình từ video
     ret, frame = cap.read()
 
